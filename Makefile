@@ -1,4 +1,5 @@
-# Makefile to handle
+# Makefile to handle pre-commit checks
+
 .DEFAULT_GOAL := build
 
 make-me-pretty:
@@ -15,10 +16,10 @@ vet: make-me-pretty
 
 run-tests: vet
 	go test .
-.PHONY: vet
+.PHONY:run-tests
 
 build: run-tests
 	go build adder.go
-.PHONY: build
+.PHONY:build
 
 
